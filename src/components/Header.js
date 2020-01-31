@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
+const Text = styled.h1`
+  color: black;
+`;
 export default function Header() {
   return (
-    <header className="ui centered">
-      <Link to="/">
+    <header>
+      <NavLink to="/">
         {" "}
-        <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-      </Link>
+        <Text>Rick &amp; Morty Fan Page</Text>
+      </NavLink>
     </header>
   );
 }

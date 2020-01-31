@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-image: url("https://cdn1.thr.com/sites/default/files/2015/07/rick_and_morty_s02_still.jpg");
-  background-size: 100% 100%;
+  background-size: 100% 110%;
 }
 
 main {
@@ -38,4 +38,5 @@ main {
 
 header h1 {
   text-align: center;
+  text-decoration: none;
 }

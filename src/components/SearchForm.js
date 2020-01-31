@@ -11,13 +11,14 @@ const SearchFormContainer = styled.div`
 
   .input {
     background: lightgray;
-    width: 15em;
+    width: 10em;
     height: 3.5em;
     font-family: monospace;
     caret-color: transparent;
     transition: width 0.3s linear;
     border-radius: 2em;
     outline: 0;
+    font-weight: bold;
   }
   .wrapper:hover .input {
     padding: 0 10px;

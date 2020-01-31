@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList";
 import LocationsList from "./components/LocationsList";
@@ -18,16 +18,16 @@ export default function App() {
     <main>
       <Header />
       <MainContainer>
-        <Link to="/characters">
+        <NavLink to="/characters">
           <div className="bg-silver dib br4 pa3 ma2 grow tc">
             <h1>Characters</h1>
           </div>
-        </Link>
-        <Link to="/locations">
+        </NavLink>
+        <NavLink to="/locations">
           <div className="bg-silver dib br4 pa3 ma2 grow tc">
             <h1>Locations</h1>
           </div>
-        </Link>
+        </NavLink>
       </MainContainer>
       <Route path="/characters">
         <Scroll>
