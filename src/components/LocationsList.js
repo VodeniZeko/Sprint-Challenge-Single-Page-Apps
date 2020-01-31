@@ -30,6 +30,7 @@ export default function LocationsList() {
   }, [search]);
 
   const handleInput = e => {
+    e.preventDefault();
     setSearch(e.target.value);
   };
 
