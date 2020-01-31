@@ -19,7 +19,6 @@ export default function CharacterList() {
     axios
       .get(`https://rickandmortyapi.com/api/character/`)
       .then(res => {
-        console.log(res.data);
         const results = res.data.results.filter(character =>
           character.name.toLowerCase().includes(search.toLowerCase())
         );
@@ -33,10 +32,9 @@ export default function CharacterList() {
   const handleInput = e => {
     setSearch(e.target.value);
   };
-  console.log(search);
   return (
     <div>
-      <SearchForm handleInput={handleInput} />
+      <SearchForm handleInput={handleInput} search={search} />
       <CharacterListContainer>
         {characters.map(char => (
           <CharacterCard key={char.id} char={char} />

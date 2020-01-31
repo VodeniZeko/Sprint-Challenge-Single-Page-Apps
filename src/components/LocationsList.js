@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LocationsCard from "./LocationCard";
+import SearchForm from "./SearchForm";
 import styled from "styled-components";
 
 const LocationListContainer = styled.div`
@@ -12,23 +13,34 @@ const LocationListContainer = styled.div`
 
 export default function LocationsList() {
   const [locations, setLocations] = useState([]);
+  const [search, setSearch] = useState("");
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://rickandmortyapi.com/api/location/`)
-  //     .then(res => {
-  //       setLocations(res.data.results);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`https://rickandmortyapi.com/api/location/`)
+      .then(res => {
+        const results = res.data.results.filter(item =>
+          item.name.toLowerCase().includes(search.toLocaleLowerCase())
+        );
+        setLocations(results);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [search]);
+
+  const handleInput = e => {
+    setSearch(e.target.value);
+  };
 
   return (
-    <LocationListContainer>
-      {locations.map(location => (
-        <LocationsCard location={location} />
-      ))}
-    </LocationListContainer>
+    <div>
+      <SearchForm handleInput={handleInput} search={search} />
+      <LocationListContainer>
+        {locations.map(location => (
+          <LocationsCard location={location} key={location.id} />
+        ))}
+      </LocationListContainer>
+    </div>
   );
 }

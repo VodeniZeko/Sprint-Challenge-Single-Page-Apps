@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const LocationCardContainer = styled.div``;
 export default function LocationCard(location) {
-  console.log(location);
   const { name, type, dimension, residents, created } = location.location;
   return (
     <LocationCardContainer className=" bg-silver dib br4 pa3 ma2 grow tc">
