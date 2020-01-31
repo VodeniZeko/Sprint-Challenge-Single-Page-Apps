@@ -7,7 +7,7 @@ export default function LocationCard(location) {
   return (
     <LocationCardContainer className=" bg-silver dib br4 pa3 ma2 grow tc">
       <h2>Location name: {name}</h2>
-      <h2>Location type: {type}</h2>
+      <h4>Location type: {type}</h4>
       <p>location dimension: {dimension}</p>
       <p>populations: {residents.length}</p>
       <p>created at: {created}</p>
