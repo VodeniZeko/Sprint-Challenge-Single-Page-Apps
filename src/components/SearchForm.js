@@ -33,17 +33,21 @@ const SearchFormContainer = styled.div`
   }
 `;
 
-export default function SearchForm() {
+export default function SearchForm({ handleInput, search }) {
   return (
     <SearchFormContainer>
       <div className="wrapper-container">
         <div className="wrapper">
-          <input
-            className="input"
-            type="text"
-            name="name"
-            placeholder="search by name"
-          />
+          <form>
+            <input
+              value={search}
+              onChange={handleInput}
+              className="input"
+              type="text"
+              name="name"
+              placeholder="search by name"
+            />
+          </form>
         </div>
       </div>
     </SearchFormContainer>

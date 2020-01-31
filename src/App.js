@@ -4,7 +4,6 @@ import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList";
 import LocationsList from "./components/LocationsList";
 import Scroll from "./components/Scroll";
-import SearchForm from "./components/SearchForm";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -31,13 +30,11 @@ export default function App() {
         </Link>
       </MainContainer>
       <Route path="/characters">
-        <SearchForm />
         <Scroll>
           <CharacterList />
         </Scroll>
       </Route>
       <Route path="/locations">
-        <SearchForm />
         <Scroll>
           <LocationsList />
         </Scroll>
