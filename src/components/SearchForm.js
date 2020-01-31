@@ -10,11 +10,9 @@ const SearchFormContainer = styled.div`
   }
 
   .input {
-    outline: ;
-    border: ;
-    background: none;
-    width: 12em;
-    height: 2.5em;
+    background: lightgray;
+    width: 15em;
+    height: 3.5em;
     font-family: monospace;
     caret-color: transparent;
     transition: width 0.3s linear;
@@ -24,13 +22,14 @@ const SearchFormContainer = styled.div`
   .wrapper:hover .input {
     padding: 0 10px;
     width: 18.75em;
-    height: 2.5em;
+    height: 3.5em;
     transition: width 0.3s linear;
     caret-color: black;
     text-transform: capitalize;
     font-size: 1em;
+    font-weight: bold;
     caret-color: red;
-    color: white;
+    color: back;
   }
 `;
 
